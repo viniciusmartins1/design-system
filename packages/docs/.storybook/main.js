@@ -19,9 +19,9 @@ const config = {
     "@storybook/addon-docs",
     "@storybook/addon-a11y",
   ],
-  core: {
-    builder: "@storybook/builder-vite",
-  },
+  // core: {
+  //   builder: "@storybook/builder-vite",
+  // },
   framework: {
     name: getAbsolutePath("@storybook/react-vite"),
     options: {},
