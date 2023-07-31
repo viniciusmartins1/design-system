@@ -8,6 +8,13 @@ export default {
     src: "https://github.com/viniciusmartins1.png",
     alt: "Vinicius Martins",
   },
+  argTypes: {
+    src: {
+      control: {
+        type: "text",
+      },
+    },
+  },
 } as Meta<AvatarProps>;
 
 export const Primary: StoryObj<AvatarProps> = {};
