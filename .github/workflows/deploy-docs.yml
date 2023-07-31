@@ -2,12 +2,12 @@ name: Deploy docs
 
 on:
   push:
-    branch:
+    branches:
       - main
 
 jobs:
   build-and-deploy:
-    runs-on: ubunto-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
