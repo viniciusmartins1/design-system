@@ -1,6 +1,7 @@
 {
-  "name": "@ignite-ui/eslint-config",
+  "name": "@vinitech/eslint-config",
   "license": "MIT",
+  "version": "2.0.0",
   "main": "index.js",
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.1.0",
