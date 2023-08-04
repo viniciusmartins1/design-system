@@ -1,11 +1,12 @@
 import * as _stitches_react_types_styled_component from '@stitches/react/types/styled-component';
 import * as _stitches_react_types_css_util from '@stitches/react/types/css-util';
 import * as react from 'react';
-import { ComponentProps, ElementType } from 'react';
+import react__default, { ComponentProps, ElementType } from 'react';
 import * as react_jsx_runtime from 'react/jsx-runtime';
 import * as Avatar$1 from '@radix-ui/react-avatar';
 import * as Checkbox$1 from '@radix-ui/react-checkbox';
 import * as Toast$1 from '@radix-ui/react-toast';
+import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 import * as _stitches_react_types_theme from '@stitches/react/types/theme';
 import * as _stitches_react_types_css from '@stitches/react/types/css';
 import * as _stitches_react_types_util from '@stitches/react/types/util';
@@ -1903,6 +1904,12 @@ interface ToastProps extends ComponentProps<typeof ToastContainer> {
 }
 declare function Toast({ title, description, isOpen, setIsOpenToast, }: ToastProps): react_jsx_runtime.JSX.Element;
 
+interface TooltipProps extends ComponentProps<typeof TooltipPrimitive.Root> {
+    children: react__default.ReactNode;
+    content: string;
+}
+declare function Tooltip({ children, content, ...props }: TooltipProps): react_jsx_runtime.JSX.Element;
+
 declare const config: {
     prefix: "";
     media: {};
@@ -3605,4 +3612,4 @@ declare const theme: string & {
     };
 };
 
-export { Avatar, AvatarProps, Box, BoxProps, Button, ButtonProps, Checkbox, CheckboxProps, Heading, HeadingProps, MultiStep, MultiStepProps, Text, TextArea, TextAreaProps, TextInput, TextInputProps, TextProps, Toast, ToastProps, config, createTheme, css, getCssText, globalCss, keyframes, styled, theme };
+export { Avatar, AvatarProps, Box, BoxProps, Button, ButtonProps, Checkbox, CheckboxProps, Heading, HeadingProps, MultiStep, MultiStepProps, Text, TextArea, TextAreaProps, TextInput, TextInputProps, TextProps, Toast, ToastProps, Tooltip, TooltipProps, config, createTheme, css, getCssText, globalCss, keyframes, styled, theme };

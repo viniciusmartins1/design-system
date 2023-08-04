@@ -69,6 +69,7 @@ __export(src_exports, {
   TextArea: () => TextArea,
   TextInput: () => TextInput,
   Toast: () => Toast2,
+  Tooltip: () => Tooltip2,
   config: () => config,
   createTheme: () => createTheme,
   css: () => css,
@@ -1081,6 +1082,103 @@ function Toast2({
     /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(ToastViewPort, {})
   ] });
 }
+
+// src/components/Tootip/index.tsx
+var TooltipPrimitive = __toESM(require("@radix-ui/react-tooltip"));
+
+// src/components/Tootip/styles.ts
+var Tooltip = __toESM(require("@radix-ui/react-tooltip"));
+var slideUpAndFade = keyframes({
+  from: {
+    opacity: 0,
+    transform: "translateY(2px)"
+  },
+  to: {
+    opacity: 1,
+    transform: "translateY(0)"
+  }
+});
+var slideRightAndFade = keyframes({
+  from: {
+    opacity: 0,
+    transform: "translateX(-2px)"
+  },
+  to: {
+    opacity: 1,
+    transform: "translateX(0)"
+  }
+});
+var slideLeftAndFade = keyframes({
+  from: {
+    opacity: 0,
+    transform: "translateX(2px)"
+  },
+  to: {
+    opacity: 1,
+    transform: "translateX(0)"
+  }
+});
+var slideDownAndFade = keyframes({
+  from: {
+    opacity: 0,
+    transform: "translateY(-2px)"
+  },
+  to: {
+    opacity: 1,
+    transform: "translateY(0)"
+  }
+});
+var TooltipContent = styled(Tooltip.Content, {
+  userSelect: "none",
+  padding: "$3 $4",
+  backgroundColor: "$gray900",
+  borderRadius: "$sm",
+  fontFamily: "Roboto",
+  pointerEvents: "none",
+  lineHeight: 1,
+  p: {
+    color: "$gray100",
+    textAlign: "center",
+    fontSize: "$sm",
+    fontWeight: "$medium",
+    lineHeight: "$short",
+    margin: 0
+  },
+  "&[data-state='delayed-open'][data-side='top']": {
+    animation: `${slideUpAndFade} 400ms ease-in`
+  },
+  "&[data-state='delayed-open'][data-side='bottom']": {
+    animation: `${slideDownAndFade} 400ms ease-in`
+  },
+  "&[data-state='delayed-open'][data-side='right']": {
+    animation: `${slideRightAndFade} 400ms ease-in`
+  },
+  "&[data-state='delayed-open'][data-side='left']": {
+    animation: `${slideLeftAndFade} 400ms ease-in`
+  }
+});
+
+// src/components/Tootip/index.tsx
+var import_jsx_runtime6 = require("react/jsx-runtime");
+function Tooltip2(_a) {
+  var _b = _a, { children, content } = _b, props = __objRest(_b, ["children", "content"]);
+  return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+    "div",
+    {
+      style: {
+        display: "flex",
+        gap: "10px"
+      },
+      children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(TooltipPrimitive.Provider, { children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(TooltipPrimitive.Root, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(TooltipPrimitive.Trigger, { asChild: true, children }),
+        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(TooltipPrimitive.Portal, { children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(TooltipContent, __spreadProps(__spreadValues({ side: "top" }, props), { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { children: content }),
+          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(TooltipPrimitive.Arrow, { width: 11, height: 5 })
+        ] })) })
+      ] }) })
+    }
+  );
+}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Avatar,
@@ -1093,6 +1191,7 @@ function Toast2({
   TextArea,
   TextInput,
   Toast,
+  Tooltip,
   config,
   createTheme,
   css,

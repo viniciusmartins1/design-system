@@ -1031,6 +1031,103 @@ function Toast2({
     /* @__PURE__ */ jsx5(ToastViewPort, {})
   ] });
 }
+
+// src/components/Tootip/index.tsx
+import * as TooltipPrimitive from "@radix-ui/react-tooltip";
+
+// src/components/Tootip/styles.ts
+import * as Tooltip from "@radix-ui/react-tooltip";
+var slideUpAndFade = keyframes({
+  from: {
+    opacity: 0,
+    transform: "translateY(2px)"
+  },
+  to: {
+    opacity: 1,
+    transform: "translateY(0)"
+  }
+});
+var slideRightAndFade = keyframes({
+  from: {
+    opacity: 0,
+    transform: "translateX(-2px)"
+  },
+  to: {
+    opacity: 1,
+    transform: "translateX(0)"
+  }
+});
+var slideLeftAndFade = keyframes({
+  from: {
+    opacity: 0,
+    transform: "translateX(2px)"
+  },
+  to: {
+    opacity: 1,
+    transform: "translateX(0)"
+  }
+});
+var slideDownAndFade = keyframes({
+  from: {
+    opacity: 0,
+    transform: "translateY(-2px)"
+  },
+  to: {
+    opacity: 1,
+    transform: "translateY(0)"
+  }
+});
+var TooltipContent = styled(Tooltip.Content, {
+  userSelect: "none",
+  padding: "$3 $4",
+  backgroundColor: "$gray900",
+  borderRadius: "$sm",
+  fontFamily: "Roboto",
+  pointerEvents: "none",
+  lineHeight: 1,
+  p: {
+    color: "$gray100",
+    textAlign: "center",
+    fontSize: "$sm",
+    fontWeight: "$medium",
+    lineHeight: "$short",
+    margin: 0
+  },
+  "&[data-state='delayed-open'][data-side='top']": {
+    animation: `${slideUpAndFade} 400ms ease-in`
+  },
+  "&[data-state='delayed-open'][data-side='bottom']": {
+    animation: `${slideDownAndFade} 400ms ease-in`
+  },
+  "&[data-state='delayed-open'][data-side='right']": {
+    animation: `${slideRightAndFade} 400ms ease-in`
+  },
+  "&[data-state='delayed-open'][data-side='left']": {
+    animation: `${slideLeftAndFade} 400ms ease-in`
+  }
+});
+
+// src/components/Tootip/index.tsx
+import { jsx as jsx6, jsxs as jsxs5 } from "react/jsx-runtime";
+function Tooltip2(_a) {
+  var _b = _a, { children, content } = _b, props = __objRest(_b, ["children", "content"]);
+  return /* @__PURE__ */ jsx6(
+    "div",
+    {
+      style: {
+        display: "flex",
+        gap: "10px"
+      },
+      children: /* @__PURE__ */ jsx6(TooltipPrimitive.Provider, { children: /* @__PURE__ */ jsxs5(TooltipPrimitive.Root, { children: [
+        /* @__PURE__ */ jsx6(TooltipPrimitive.Trigger, { asChild: true, children }),
+        /* @__PURE__ */ jsx6(TooltipPrimitive.Portal, { children: /* @__PURE__ */ jsxs5(TooltipContent, __spreadProps(__spreadValues({ side: "top" }, props), { children: [
+          /* @__PURE__ */ jsx6("p", { children: content }),
+          /* @__PURE__ */ jsx6(TooltipPrimitive.Arrow, { width: 11, height: 5 })
+        ] })) })
+      ] }) })
+    }
+  );
+}
 export {
   Avatar2 as Avatar,
   Box,
@@ -1042,6 +1139,7 @@ export {
   TextArea,
   TextInput,
   Toast2 as Toast,
+  Tooltip2 as Tooltip,
   config,
   createTheme,
   css,

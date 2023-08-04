@@ -3,7 +3,7 @@ import { Toast, ToastProps, Button } from "@vinitech/react";
 import { useState } from "react";
 
 export default {
-  title: "Form/Toast",
+  title: "Feedback/Toast",
   component: Toast,
   decorators: [
     (Story) => {
@@ -13,7 +13,12 @@ export default {
       }
       return (
         <>
-          <Button variant="primary" size="md" onClick={handleClick}>
+          <Button
+            style={{ margin: "3rem 5rem" }}
+            variant="primary"
+            size="md"
+            onClick={handleClick}
+          >
             Clique para abrir o toast
           </Button>
           {Story({
