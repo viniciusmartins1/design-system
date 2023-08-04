@@ -1,5 +1,11 @@
 # @vinitech/tokens
 
+## 3.0.0
+
+### Major Changes
+
+- Add component Toast and Tooltip
+
 ## 2.1.0
 
 ### Minor Changes
